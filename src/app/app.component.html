@@ -1,0 +1,60 @@
+
+<div class="heading">
+  <h3>
+      <img src="https://assets.dryicons.com/uploads/icon/svg/6258/be0121ad-dca9-409d-97e2-994b959a16d3.svg" style="width:28px;height:28px">
+      GAGAN'S Task Manager !
+  </h3>
+</div>
+<div class="main">
+    <div>
+  <div class="todo-input">
+      <span>Enter Task: </span>
+      <input type="text" placeholder="Enter new task" [(ngModel)]="newTask.todo">
+      <span>Enter Category: </span>
+      <input type="text" placeholder="Enter new category" list="categoryList" [(ngModel)]="newTask.category">
+      <datalist id="categoryList">
+          <option value="Personal"></option>
+          <option value="Work"></option>
+          <option value="Shopping"></option>
+      </datalist>
+      <span>Enter Due Date:</span>
+      <input type="date" id="dateInput" [(ngModel)]="newTask.date">
+      <span>Enter Due Time:</span>
+      <input type="time" id="timeInput" [(ngModel)]="newTask.time">
+      <button (click)="addTask()">ADD NEW TASK</button>
+      <button (click)="sortTasks()">SORT BY DATE</button>
+      <label style="font-size:18px;color:#03283d;font-size:bold;">
+          <input type="checkbox" id="shortlistBtn" [(ngModel)]="showIncompleteFirst">Display Incomplete Task First
+      </label>
+  </div>
+
+  <div class="tablee">
+      <table id="todoTable">
+          <tr class="firstRow">
+              <td><span >Mark as Complete</span></td>
+              <td>Due-Date</td>
+              <td>Due-Time</td>
+              <td>Task</td>
+              <td>
+                  <select id="categoryFilter" [(ngModel)]="selectedCategory" (change)="filterTasks()">
+                      <option value="Choose Category">Choose Category</option>
+                      <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
+                  </select>
+              </td>
+              <td><span >Delete</span></td>
+          </tr>
+          <tr *ngFor="let task of filteredTasks" [ngClass]="{'strike': task.done, }">
+            <td><input type="checkbox" [checked]="task.done" (change)="markDone(task.id)"></td>
+            <td><input type="date" [(ngModel)]="task.date" (change)="editTask($event, 'date', task.id)"></td>
+            <td><input type="time" [(ngModel)]="task.time" (change)="editTask($event, 'time', task.id)"></td>
+            <td (click)="editTask($event, 'todo', task.id)" [attr.contenteditable]="true">{{ task.todo }}</td>
+            <td (click)="editTask($event, 'category', task.id)" [attr.contenteditable]="true">{{ task.category }}</td>
+            <td><span class="material-symbols-outlined" (click)="deleteTask(task.id)">delete</span></td>
+          </tr>
+      </table>
+  </div>
+</div>
+  <div class="todo-calendar">
+      <div id='calendar'></div>
+  </div>
+</div>

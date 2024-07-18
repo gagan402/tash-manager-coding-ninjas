@@ -1,0 +1,162 @@
+  
+.strike{
+    text-decoration:line-through;
+}
+
+
+td{
+    border:2px solid  rgb(249, 248, 248);
+    padding:5px;
+}
+
+.todo-input{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    row-gap:1rem;
+    border:2px solid  rgb(249, 248, 248);
+    padding:1rem;
+    border-radius:12px;
+    color:#03283d;
+    font-size:28px;
+}
+
+.todo-input input{
+    border:2px solid  rgb(249, 248, 248);
+    border-radius: 4px;
+    font-family: 'Karla';
+    font-size:17px;
+}
+#todoTable{
+    width:100%;
+    margin-top:0rem;
+    border:2px solid  rgb(249, 248, 248);
+    padding:1rem;
+    border-radius:12px;
+    color:#03283d;
+    border-collapse: collapse;
+
+ 
+}
+
+
+.tablee{
+    margin-top:1rem;
+    max-height:340px;
+    overflow-y:scroll;
+}
+.tablee::-webkit-scrollbar {
+    width:5px;
+}
+.tablee::-webkit-scrollbar-track {
+    background:#485a67;
+    border-radius:25px;
+
+}
+.tablee::-webkit-scrollbar-thumb {
+    background:rgb(249, 248, 248);
+    border-radius:25px;
+    
+}
+
+#todoTable select{
+    border:1px solid #0e4164;
+    border-radius: 4px;
+    font-family: 'Karla';
+    font-size:17px;
+}
+
+h3{
+    color:#001C30;
+    padding-left:5px;
+    padding-bottom:9px;
+    margin-top:0;
+    margin-bottom:0;
+    font-size:27px;
+    
+}
+
+.d1{
+    display:flex;
+
+}
+.d2{
+    display:flex;
+}
+body{
+
+    background-color:#93deeb;
+    margin-left:25px;
+    margin-right:25px;
+
+font-family: 'Karla', sans-serif;
+
+}
+#calendar{
+    border:2px solid rgb(249, 248, 248);
+    padding:1rem;
+    border-radius:12px;
+    color:#0e4164;
+}
+#addBtn{
+    width: 95%;
+    background-color:#357d9f;
+    height:32px;
+    border-radius:4px;
+    border:1px solid  rgb(249, 248, 248);
+    font-size:16px;
+    color:rgb(249, 248, 248);
+
+
+}
+
+  
+#sortBtn{
+
+    width: 95%;
+    background-color:#357d9f;
+    height:32px;
+    border-radius:4px;
+    border:1px solid  rgb(249, 248, 248);
+    font-size:16px;
+    color:rgb(249, 248, 248);
+    
+}
+.firstRow td{
+    font-size: 22px;;
+    font-weight: bold;
+}
+
+
+@media screen and (max-width: 767px) {
+    /* for mobiles or small screen devices */
+    #todoTable,
+    #calendar {
+        margin-top: 1.5rem;
+    }
+}
+
+@media screen and (min-width: 760px) {
+    /* for tablets or laptops or desktops */
+    .main {
+        display: grid;
+        grid-template-columns: 2fr 3fr;
+        column-gap: 1.5rem;
+    }
+
+    #calendar {
+        position: sticky;
+        top: 0;
+        max-height: 678px;
+    }
+}
+
+
+
+.todo-calendar table td,
+.todo-calendar table th,
+.todo-calendar table thead,
+.todo-calendar table {
+    /* color:red; */
+    /* border:1px solid red; */
+    border-color: rgb(249, 248, 248);
+}
